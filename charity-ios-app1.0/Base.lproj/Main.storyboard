@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ZPj-C2-zxb">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Dashboard-->
+        <scene sceneID="cIV-5Z-9dm">
+            <objects>
+                <tableViewController id="jQB-Pc-ObU" customClass="CharitiesViewController" customModule="charity_ios_app1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="5td-52-dl6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CharityCell" rowHeight="55" id="lkI-xu-D7O" userLabel="CharityCell" customClass="CharityCell" customModule="charity_ios_app1_0" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lkI-xu-D7O" id="J06-3v-Sqo">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XA9-xa-R0M">
+                                            <rect key="frame" x="8" y="8" width="156" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Office" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="347-V8-GXs">
+                                            <rect key="frame" x="8" y="25" width="156" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="XA9-xa-R0M" id="DAr-OD-Sw9"/>
+                                    <outlet property="officeLabel" destination="347-V8-GXs" id="1Lu-Cp-Td2"/>
+                                    <segue destination="ggl-2D-6Mi" kind="modal" identifier="EditCharity" trigger="accessoryAction" id="tNP-wY-Npd"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jQB-Pc-ObU" id="nho-SU-US6"/>
+                            <outlet property="delegate" destination="jQB-Pc-ObU" id="owU-dj-rWC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Dashboard" id="K3r-nO-Uhm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oU4-UK-GDh">
+                            <connections>
+                                <segue destination="ggl-2D-6Mi" kind="modal" identifier="AddCharity" id="En5-GF-eQg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acf-N8-vJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="645" y="354"/>
+        </scene>
+        <!--New Charity-->
+        <scene sceneID="w47-rb-nxP">
+            <objects>
+                <tableViewController id="dD8-IV-h5s" customClass="CharityDetailsViewController" customModule="charity_ios_app1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="PzI-rU-lcu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Charity Name" id="Jpe-rP-5S5">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="TZe-th-Wid">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TZe-th-Wid" id="LRn-cJ-Ym0">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="R21-9a-ZYA">
+                                                    <rect key="frame" x="8" y="5" width="304" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Tzm-mb-wUl">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="2wI-N6-ZgM" detailTextLabel="xQv-t5-41g" style="IBUITableViewCellStyleValue1" id="IhK-b9-hNG">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IhK-b9-hNG" id="mwt-Jr-wta">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Office" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2wI-N6-ZgM">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xQv-t5-41g">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="tEB-ZR-5do" kind="push" identifier="PickOffice" id="h9b-O1-Ddd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="6Pl-9w-nXY">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Odk-HZ-c56">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Odk-HZ-c56" id="cDi-aP-lIO">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l2a-oc-vu1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="386" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.99607843137254903" green="0.80784313725490198" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="iw1-Ov-l7i" kind="unwind" unwindAction="deleteCharity:" id="vvl-6y-sgA"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="iw1-Ov-l7i" kind="unwind" unwindAction="deleteCharity:" id="8WG-2o-jWV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="dD8-IV-h5s" id="ehG-Bf-oQx"/>
+                            <outlet property="delegate" destination="dD8-IV-h5s" id="izA-vL-i7c"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="New Charity" id="4GA-WN-Rt8">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bcE-61-Mlw">
+                            <connections>
+                                <segue destination="iw1-Ov-l7i" kind="unwind" identifier="CancelCharityDetail" unwindAction="cancelToCharitiesViewController:" id="2Ya-CJ-6W8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="HZr-Ob-kK3">
+                            <connections>
+                                <segue destination="iw1-Ov-l7i" kind="unwind" identifier="SaveCharityDetail" unwindAction="saveCharityDetail:" id="fgW-hQ-5Xk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="deleteButtonCell" destination="Odk-HZ-c56" id="wbS-se-K0t"/>
+                        <outlet property="detailLabel" destination="xQv-t5-41g" id="p8f-uU-fS2"/>
+                        <outlet property="nameTextField" destination="R21-9a-ZYA" id="RH3-A2-Vju"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RFc-YX-gxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iw1-Ov-l7i" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="354"/>
+        </scene>
+        <!--Choose Office-->
+        <scene sceneID="Npd-5B-gFN">
+            <objects>
+                <tableViewController id="tEB-ZR-5do" customClass="OfficePickerViewController" customModule="charity_ios_app1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bf7-dx-138">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OfficeCell" textLabel="5JO-t3-CXj" style="IBUITableViewCellStyleDefault" id="WiR-XV-pOT" userLabel="OfficeCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WiR-XV-pOT" id="Lg9-7o-VmH">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5JO-t3-CXj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="HrE-7P-3nB" kind="unwind" identifier="SaveSelectedOffice" unwindAction="selectedOffice:" id="3CT-tX-kfb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tEB-ZR-5do" id="nJd-ss-VgC"/>
+                            <outlet property="delegate" destination="tEB-ZR-5do" id="YVI-Mm-qLD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose Office" id="8tL-lq-7gb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fMl-y1-gxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HrE-7P-3nB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1956" y="354"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="csh-80-ATC">
+            <objects>
+                <navigationController id="ggl-2D-6Mi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IQy-V5-070">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dD8-IV-h5s" kind="relationship" relationship="rootViewController" id="ACb-Pw-3p5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ex-mb-4Gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="354"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kPR-on-Ype">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZPj-C2-zxb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LKh-PZ-cPa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jQB-Pc-ObU" kind="relationship" relationship="rootViewController" id="al1-BU-tk0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9b-Lu-qMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="354"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="En5-GF-eQg"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.99607843137254903" green="0.80784313725490198" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+</document>
